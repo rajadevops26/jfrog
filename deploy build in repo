@@ -1,0 +1,31 @@
+node{
+    stage('GIT_HUB')
+    {
+        git 'https://github.com/loverajarani/game-of-life.git'
+    }
+    stage('MVN')
+    {
+        sh 'mvn package'
+    }
+     
+stage('Artifactory')
+{
+def server = Artifactory.server 'raj-4091'
+server.bypassProxy = true
+server.connection.timeout = 300
+def uploadSpec = """{
+  "files": [
+    {
+      "pattern": "target/*game*.war",
+      "target":"raj-mvn"
+      
+    }
+ ]
+}"""
+server.upload(uploadSpec)
+def buildInfo = Artifactory.newBuildInfo()
+server.upload spec: uploadSpec, buildInfo: buildInfo
+def buildInfo1 = server.upload uploadSpec
+server.publishBuildInfo buildInfo1
+}
+}
