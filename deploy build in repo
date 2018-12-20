@@ -50,4 +50,5 @@ server.publishBuildInfo buildInfo1
        server.upload(uploadSpec)
       
     }
-
+*************************** delete all builds ****************
+build browser select X mark it deletes all builds
