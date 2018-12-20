@@ -29,3 +29,25 @@ def buildInfo1 = server.upload uploadSpec
 server.publishBuildInfo buildInfo1
 }
 }
+
+******************* with credentials ***************************************
+
+    stage('Artifact Details'){
+       def server = Artifactory.newServer url: 'http://52.91.42.193:8081/artifactory/', username: 'rajendra', password: 'admin'
+       def buildInfo = Artifactory.newBuildInfo()
+       buildInfo.name = Artifactory.newBuildInfo().name
+       buildInfo.number = Artifactory.newBuildInfo().number
+       server.publishBuildInfo buildInfo
+       
+       def uploadSpec = """{
+           "files": [
+           {
+            "pattern": "target/*game*.war",
+            "target": "rajmvn"
+           }
+            ]
+       }"""
+       server.upload(uploadSpec)
+      
+    }
+
