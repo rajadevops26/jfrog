@@ -52,3 +52,4 @@ server.publishBuildInfo buildInfo1
     }
 *************************** delete all builds ****************
 build browser select X mark it deletes all builds
+ buildInfo.retention maxBuilds: 2, doNotDiscardBuilds: ["12"], deleteBuildArtifacts: true
