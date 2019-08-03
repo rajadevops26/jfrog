@@ -1,0 +1,58 @@
+dcoker pull rajarani/jenkins------to get os and java already installed
+kill -9 existing process id and restart the tomcat service it will run
+http://192.168.99.100:8081/artifactory/
+
+
+
+root@a87169d2da75:/opt/jfrog/artifactory/tomcat/bin# history
+    1  ls
+    2  clear
+    3  ls
+    4  echo $JAVA_HOME
+    5  cat>>/etc/environment
+    6  source /etc/environment
+    7  echo $JAVA_HOME
+    8  echo "deb https://jfrog.bintray.com/artifactory-debs xenial main" | sudo tee -a /etc/apt/sources.list
+    9  echo "deb https://jfrog.bintray.com/artifactory-debs xenial main" | tee -a /etc/apt/sources.list
+   10  curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog | apt-key add -
+   11  curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog | sudo apt-key add -
+   12  clear
+   13  apt-get install curl
+   14  curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog |  apt-key add -
+   15  apt-get update
+   16  curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog |  apt-key add -
+   17  apt-get install curl -y
+   18  curl https://bintray.com/user/downloadSubjectPublicKey?username=jfrog |  apt-key add -
+   19  ls
+   20  apt-get update
+   21  apt-get install jfrog-artifactory-cpp-ce
+   22  vi /etc/environment
+   23  clear
+   24  echo $JAVA_HOME
+   25  cat>>/etc/environment
+   26  source /etc/environment
+   27  tail -f $ARTIFACTORY_HOME/logs/artifactory.log
+   28  service artifactory start
+   29  tail -f $ARTIFACTORY_HOME/logs/artifactory.log
+   30  service artifactory start
+   31  service artifactory status
+   32  service artifactory start
+   33  exit
+   34  service artifactory status
+   35  service artifactory start
+   36  cd /opt/jfrog/
+   37  cd artifactory/
+   38  ls
+   39  cd tomcat/
+   40  ls
+   41  clear
+   42  ls
+   43  cd bin/
+   44  ls
+   45  sh catalina.sh
+   46  ./startup.sh
+   47  kill -9 68
+   48  ./startup.sh
+   49  clear
+   50  history
+root@a87169d2da75:/opt/jfrog/artifactory/tomcat/bin#
